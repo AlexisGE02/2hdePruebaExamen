@@ -3,7 +3,7 @@ package servicios;
 import controladores.Inicio;
 
 public class MenuGestionImplementacion implements MenuInterfaz {
-
+GestionImplementacion gi = new GestionImplementacion();
 	@Override
 	public void mostrarMenu() {
 		// Menú Gestión
@@ -11,7 +11,8 @@ public class MenuGestionImplementacion implements MenuInterfaz {
 				System.out.println("Escoja una opción··········");
 				System.out.println("1. Mostrar Ventas del Día··");
 				System.out.println("2. Crear un nuevo Pedido···");
-				System.out.println("3. Volver al menú principal");
+				System.out.println("3. Filtrar Ventas··········");
+				System.out.println("4. Volver al menú principal");
 			}
 
 
@@ -26,15 +27,16 @@ public class MenuGestionImplementacion implements MenuInterfaz {
 		boolean esCerrado = false;
 		switch(opcion) {
 		case 1:
-			//Mostrar Ventas
+			gi.mostrarVentas();
 			break;
 				
 		case 2:
-			//Nuevo Pedido
+			gi.crearPedido();
 			break;
-			
 		case 3:
-			//Volver
+			gi.filtrarVentas();
+		case 4:
+		
 			esCerrado=true;
 			break;
 			

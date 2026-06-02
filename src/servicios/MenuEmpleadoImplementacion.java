@@ -2,8 +2,8 @@ package servicios;
 
 import controladores.Inicio;
 
-public class MenuEmpresarioImplementacion implements MenuInterfaz {
-
+public class MenuEmpleadoImplementacion implements MenuInterfaz {
+EmpleadoImplementacion ei = new EmpleadoImplementacion();
 	@Override
 	public void mostrarMenu() {
 		// Menú Gestión
@@ -25,11 +25,11 @@ public class MenuEmpresarioImplementacion implements MenuInterfaz {
 		boolean esCerrado = false;
 		switch(opcion) {
 		case 1:
-			//Añadir Ventas
+			ei.aniadirVenta();
 			break;
 			
 		case 2:
-			//Calcular total
+			ei.calculoVentasDiario();
 			break;
 			
 		case 3:

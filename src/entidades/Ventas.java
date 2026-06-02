@@ -19,13 +19,13 @@ public class Ventas {
 
 	public Ventas() {
 		super();
-		this.id = Inicio.idVentas;
+		this.id = Inicio.idVentas++;
 	}
 	
 	// Atributos
 	private int id;
 	private int importe;
-	private LocalDateTime fechaInstante = LocalDateTime.now();
+	private LocalDateTime fechaInstante;
 	
 	//Getters y Setters
 	public int getId() {
@@ -40,13 +40,21 @@ public class Ventas {
 	public LocalDateTime getFechaInstante() {
 		return fechaInstante;
 	}
+	public void setFechaInstante(LocalDateTime fechaInstante) {
+		this.fechaInstante = fechaInstante;
+	}
 	@Override
 	public String toString() {
-		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm-ss");
+		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 		String instatanteEnFormato = fechaInstante.format(formato);
-		return ".......\nVenta numero: " + id + "\nEuros: " + importe + " euros\nInstante de Compra: " + fechaInstante;
+		return ".......\nVenta numero: " + id + "\nEuros: " + importe + " euros\nInstante de Compra: " + instatanteEnFormato;
 	}
 	
-	
+	public String datosAString() {
+		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm-ss");
+		String instatanteEnFormato = fechaInstante.format(formato);
+		return id+","+importe+","+instatanteEnFormato;
+	}
 
 }
+

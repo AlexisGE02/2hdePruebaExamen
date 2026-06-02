@@ -1,0 +1,40 @@
+.......
+Venta numero: 0
+Euros: 45 euros
+Instante de Compra: 02-06-2026 13:29:47
+.......
+Venta numero: 1
+Euros: 45 euros
+Instante de Compra: 02-06-2026 13:29:51
+.......
+Venta numero: 2
+Euros: 45 euros
+Instante de Compra: 02-06-2026 13:29:47
+.......
+Venta numero: 3
+Euros: 45 euros
+Instante de Compra: 02-06-2026 13:29:51
+.......
+Venta numero: 4
+Euros: 67 euros
+Instante de Compra: 02-06-2026 13:37:39
+.......
+Venta numero: 5
+Euros: 789 euros
+Instante de Compra: 02-06-2026 14:01:06
+.......
+Venta numero: 6
+Euros: 34 euros
+Instante de Compra: 02-06-2026 14:01:09
+.......
+Venta numero: 7
+Euros: 354 euros
+Instante de Compra: 02-06-2026 14:01:12
+.......
+Venta numero: 8
+Euros: 34 euros
+Instante de Compra: 02-06-2026 14:01:15
+.......
+Venta numero: 9
+Euros: 2 euros
+Instante de Compra: 02-06-2026 14:01:17

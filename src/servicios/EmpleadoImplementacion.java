@@ -10,15 +10,27 @@ import controladores.Inicio;
 import entidades.Ventas;
 
 public class EmpleadoImplementacion {
-	
+	/**
+	 * Añade una venta al sistema, para la que solo se precisa el importe de esta misma. 
+	 * El sistema registra un id para esta y una fecha del instante de la venta de forma automáticas
+	 * @author garci
+	 */
 	public void aniadirVenta(){
 		Inicio.sc.nextLine();
 		System.out.println("Introduzca el importe de la venta realizada: ");
 		int importe = Inicio.sc.nextInt();
+		LocalDateTime instante = LocalDateTime.now();
 		Ventas nuevaVenta = new Ventas();
+		nuevaVenta.setFechaInstante(instante);
 		nuevaVenta.setImporte(importe);
+		
 		Inicio.listaVentas.add(nuevaVenta);
 	}
+	/**
+	 * Calcula el Total de ventas en un dia pidiendo la fecha del mismo.
+	 * También muestra la duración entre la primera y la última venta de ese día
+	 * @author garci
+	 */
  public void calculoVentasDiario() {
 	 
 	 	//Limpiamos el buffer
@@ -42,6 +54,7 @@ public class EmpleadoImplementacion {
 				total +=v.getImporte();
 			}
 		}
+		if(!listaVentasDia.isEmpty()) {
 		LocalDateTime primeraVenta= listaVentasDia.getFirst().getFechaInstante();
 		LocalDateTime ultimaVenta= listaVentasDia.getLast().getFechaInstante();
 		duracion= Duration.between(primeraVenta, ultimaVenta);
@@ -49,12 +62,13 @@ public class EmpleadoImplementacion {
 		int horas = duracion.toHoursPart();
 		int minutos = duracion.toMinutesPart();
 		int segundos = duracion.toSecondsPart();
-		if(!listaVentasDia.isEmpty()) {
-			 System.out.println("Total ventas: " + total + " euros");
-		        System.out.println("Tiempo transcurrido: " + horas + " horas " + minutos + " minutos y " + segundos + " segundos");
+		
+		 System.out.println("Total ventas: " + total + " euros");
+		 System.out.println("Tiempo transcurrido: " + horas + " horas " + minutos + " minutos y " + segundos + " segundos");
 		}else {
 			System.out.println("No hay ventas registradas ese dia");
 		}
 		}
  }
+
 
